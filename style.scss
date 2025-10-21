@@ -41,6 +41,10 @@ a {
 	text-transform: uppercase;
 }
 
+li {
+	list-style: none;
+}
+
 .text-meta {
 	letter-spacing: 2px;
 	text-transform: uppercase;
@@ -51,12 +55,92 @@ a {
 	margin-bottom: 64px;
 }
 
+.btn,
+button {
+	cursor: pointer;
+}
+
+.icon:hover,
+a:hover {
+	border-color: #f7f7f7 !important;
+}
+
+span {
+	cursor: pointer !important;
+}
+
+ul>li:hover{
+	background-color: rgba(255, 255, 255, .1) !important;
+}
+
+ul>button:hover{
+	background-color: #ad9d49 !important;
+}
+
 main {
 	width: 100%;
 	max-width: 1600px;
 	display: grid;
 	grid-template-columns: 1fr;
 	margin-inline: auto;
+
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem;
+		padding-bottom: 0;
+
+		.logo {
+			font-family: "chillax";
+			font-size: 20px;
+			font-weight: 100;
+			color: #f7f7f7;
+			text-transform: uppercase;
+		}
+		.right-part {
+			ul {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 0.5rem;
+				li {
+					padding: 16px 20px;
+					background-color: #1e1e1e;
+					border-radius: 10px;
+					letter-spacing: 1px;
+					color: #f7f7f7;
+					font-size: 14px;
+					a {
+						opacity: 1;
+						display: flex;
+						gap: 10px;
+						span{
+							display: inline-block;
+							background-color: #cebd63;
+							color: #1e1e1e;
+							border-radius: 50%;
+							height: 20px;
+							width: 20px;
+							text-align: center;
+							font-weight: 800;
+						}
+					}
+				}
+				button {
+					padding: 16px 20px;
+					font-family: "Roboto", sans-serif;
+					font-size: 15px;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					border-radius: 10px;
+					background-color: #cebd63;
+					border: none;
+					color: #1e1e1e;
+				}
+			}
+		}
+	}
 
 	.view1 {
 		width: 100%;
@@ -349,6 +433,7 @@ main {
 					border-radius: 10px;
 				}
 				.studio-team-social-media {
+					z-index: 999;
 					position: absolute;
 					top: 10%;
 					right: 10%;
@@ -647,7 +732,7 @@ main {
 }
 
 @media screen and (min-width: 480px) {
-	main{
+	main {
 		.footer {
 			.footer-grid {
 				main {
@@ -660,7 +745,6 @@ main {
 			}
 		}
 	}
-	
 }
 
 @media screen and (min-width: 767px) {
@@ -759,15 +843,14 @@ main {
 					}
 				}
 
-				footer{
-					.footer-bottom{
+				footer {
+					.footer-bottom {
 						flex-direction: row;
 						justify-content: space-between;
 					}
 				}
 			}
 		}
-
 	}
 }
 

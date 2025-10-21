@@ -40,6 +40,10 @@ a {
   text-transform: uppercase;
 }
 
+li {
+  list-style: none;
+}
+
 .text-meta {
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -50,12 +54,88 @@ a {
   margin-bottom: 64px;
 }
 
+.btn,
+button {
+  cursor: pointer;
+}
+
+.icon:hover,
+a:hover {
+  border-color: #f7f7f7 !important;
+}
+
+span {
+  cursor: pointer !important;
+}
+
+ul > li:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+ul > button:hover {
+  background-color: #ad9d49 !important;
+}
+
 main {
   width: 100%;
   max-width: 1600px;
   display: grid;
   grid-template-columns: 1fr;
   margin-inline: auto;
+}
+main nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  padding-bottom: 0;
+}
+main nav .logo {
+  font-family: "chillax";
+  font-size: 20px;
+  font-weight: 100;
+  color: #f7f7f7;
+  text-transform: uppercase;
+}
+main nav .right-part ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+main nav .right-part ul li {
+  padding: 16px 20px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  color: #f7f7f7;
+  font-size: 14px;
+}
+main nav .right-part ul li a {
+  opacity: 1;
+  display: flex;
+  gap: 10px;
+}
+main nav .right-part ul li a span {
+  display: inline-block;
+  background-color: #cebd63;
+  color: #1e1e1e;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  font-weight: 800;
+}
+main nav .right-part ul button {
+  padding: 16px 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  background-color: #cebd63;
+  border: none;
+  color: #1e1e1e;
 }
 main .view1 {
   width: 100%;
@@ -330,6 +410,7 @@ main .section-studio-team .cards .card img {
   border-radius: 10px;
 }
 main .section-studio-team .cards .card .studio-team-social-media {
+  z-index: 999;
   position: absolute;
   top: 10%;
   right: 10%;
