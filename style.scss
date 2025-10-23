@@ -59,22 +59,101 @@ li {
 button {
 	cursor: pointer;
 }
+a{
+	transition: all 0.3s ease-in;
+}
 
 .icon:hover,
 a:hover {
 	border-color: #f7f7f7 !important;
 }
 
+a:hover {
+	color: white !important;
+}
+
 span {
 	cursor: pointer !important;
 }
 
-ul>li:hover{
-	background-color: rgba(255, 255, 255, .1) !important;
+ul > li:hover {
+	background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-ul>button:hover{
+ul > button:hover {
 	background-color: #ad9d49 !important;
+}
+
+.btn {
+	.icon {
+		position: relative;
+		overflow: hidden;
+		i {
+			position: absolute;
+		}
+
+		.arrow-1-from-top {
+			top: -60%;
+		}
+		.arrow-2-from-top {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.arrow-1-from-bottom{
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		.arrow-2-from-bottom{
+			top: 110%;
+		}
+
+		.arrow-1-top-right{
+			top:50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			
+		}
+		.arrow-2-top-right{
+			top:83%;
+			left:-58%;
+		}
+	}
+}
+//hover effect
+.btn:hover i.arrow-1-from-top {
+	top: 50%;
+	transform: translateY(-50%);
+	transition: all 0.4s ease 0.5s;
+}
+
+.btn:hover i.arrow-2-from-top {
+	top: 150%;
+	transition: all 0.4s ease 0s;
+}
+
+.btn:hover i.arrow-2-top-right{
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	transition: all 0.4s ease 0.5s;
+}
+
+.btn:hover i.arrow-1-top-right{
+	top:-45%;
+	left:150%;
+	transition: all 0.4s ease 0s;
+}
+
+.footer-bottom-right:hover i.arrow-1-from-bottom {
+	top: -50%;
+	transition: all 0.4s ease 0s;
+}
+
+.footer-bottom-right:hover i.arrow-2-from-bottom {
+	top: 50%;
+	transform: translateY(-50%);
+	transition: all 0.4s ease 0.5s;
 }
 
 main {
@@ -115,7 +194,7 @@ main {
 						opacity: 1;
 						display: flex;
 						gap: 10px;
-						span{
+						span {
 							display: inline-block;
 							background-color: #cebd63;
 							color: #1e1e1e;
@@ -201,10 +280,9 @@ main {
 						display: flex;
 						justify-content: center;
 						align-items: center;
-
 						i {
-							opacity: 0.6;
 							font-size: 20px;
+							opacity: 0.6;
 						}
 					}
 
@@ -656,6 +734,25 @@ main {
 							a {
 								font-size: 14px;
 								color: rgba(255, 255, 255, 0.6);
+								font-family: "Roboto", sans-serif;
+								letter-spacing: 2px;
+								position: relative;
+								width: fit-content;
+							}
+
+							a::before {
+								content: "";
+								position: absolute;
+								height: 2px;
+								width: 0%;
+								top: 100%;
+								background-color: white;
+								color: white;
+								transition: width 0.3s linear;
+							}
+
+							a:hover::before {
+								width: 100%;
 							}
 						}
 						.footer-button {
@@ -706,7 +803,7 @@ main {
 						font-family: "Roboto", sans-serif;
 						font-size: 14px;
 						gap: 1rem;
-
+						cursor: pointer;
 						.btn {
 							.icon {
 								height: 40px;
@@ -721,6 +818,7 @@ main {
 
 								i {
 									font-size: 20px;
+									opacity: 0.8;
 								}
 							}
 						}
@@ -965,7 +1063,7 @@ main {
 							height: 36px;
 							width: 36px;
 							i {
-								font-size: 14px;
+								font-size: 20px;
 							}
 						}
 						.text-meta {

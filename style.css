@@ -59,9 +59,17 @@ button {
   cursor: pointer;
 }
 
+a {
+  transition: all 0.3s ease-in;
+}
+
 .icon:hover,
 a:hover {
   border-color: #f7f7f7 !important;
+}
+
+a:hover {
+  color: white !important;
 }
 
 span {
@@ -74,6 +82,72 @@ ul > li:hover {
 
 ul > button:hover {
   background-color: #ad9d49 !important;
+}
+
+.btn .icon {
+  position: relative;
+  overflow: hidden;
+}
+.btn .icon i {
+  position: absolute;
+}
+.btn .icon .arrow-1-from-top {
+  top: -60%;
+}
+.btn .icon .arrow-2-from-top {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.btn .icon .arrow-1-from-bottom {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.btn .icon .arrow-2-from-bottom {
+  top: 110%;
+}
+.btn .icon .arrow-1-top-right {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.btn .icon .arrow-2-top-right {
+  top: 83%;
+  left: -58%;
+}
+
+.btn:hover i.arrow-1-from-top {
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.4s ease 0.5s;
+}
+
+.btn:hover i.arrow-2-from-top {
+  top: 150%;
+  transition: all 0.4s ease 0s;
+}
+
+.btn:hover i.arrow-2-top-right {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease 0.5s;
+}
+
+.btn:hover i.arrow-1-top-right {
+  top: -45%;
+  left: 150%;
+  transition: all 0.4s ease 0s;
+}
+
+.footer-bottom-right:hover i.arrow-1-from-bottom {
+  top: -50%;
+  transition: all 0.4s ease 0s;
+}
+
+.footer-bottom-right:hover i.arrow-2-from-bottom {
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.4s ease 0.5s;
 }
 
 main {
@@ -195,8 +269,8 @@ main .view1 .bottom .text .btn .icon {
   align-items: center;
 }
 main .view1 .bottom .text .btn .icon i {
-  opacity: 0.6;
   font-size: 20px;
+  opacity: 0.6;
 }
 main .view1 .bottom .text .btn button {
   width: -moz-fit-content;
@@ -616,6 +690,24 @@ main .footer .footer-grid main .footer-top-grid .footer-column .footer-nav {
 main .footer .footer-grid main .footer-top-grid .footer-column .footer-nav a {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.6);
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 2px;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+main .footer .footer-grid main .footer-top-grid .footer-column .footer-nav a::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0%;
+  top: 100%;
+  background-color: white;
+  color: white;
+  transition: width 0.3s linear;
+}
+main .footer .footer-grid main .footer-top-grid .footer-column .footer-nav a:hover::before {
+  width: 100%;
 }
 main .footer .footer-grid main .footer-top-grid .footer-column .footer-button {
   margin-top: 2rem;
@@ -660,6 +752,7 @@ main .footer .footer-grid footer .footer-bottom .footer-bottom-right {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   gap: 1rem;
+  cursor: pointer;
 }
 main .footer .footer-grid footer .footer-bottom .footer-bottom-right .btn .icon {
   height: 40px;
@@ -675,6 +768,7 @@ main .footer .footer-grid footer .footer-bottom .footer-bottom-right .btn .icon 
 }
 main .footer .footer-grid footer .footer-bottom .footer-bottom-right .btn .icon i {
   font-size: 20px;
+  opacity: 0.8;
 }
 
 @media screen and (min-width: 480px) {
@@ -820,7 +914,7 @@ main .footer .footer-grid footer .footer-bottom .footer-bottom-right .btn .icon 
     width: 36px;
   }
   main .section-join-team .section-studio-grid .bottom .btn .icon i {
-    font-size: 14px;
+    font-size: 20px;
   }
   main .section-join-team .section-studio-grid .bottom .btn .text-meta {
     font-size: 14px;
